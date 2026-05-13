@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTcode — Guia Básico de Programação</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader">
+      <span class="loader-text">GT</span>
+      <span class="loader-cursor">|</span>
+    </div>
+  </div>
+
+  <!-- PARTICLES BACKGROUND -->
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-gt">GT</span><span class="logo-code">code</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Início</a></li>
+        <li><a href="#languages" class="nav-link">Linguagens</a></li>
+        <li><a href="#career" class="nav-link">Carreira</a></li>
+        <li><a href="#study" class="nav-link">Estudo</a></li>
+        <li><a href="#courses" class="nav-link">Cursos</a></li>
+        <li><a href="#creators" class="nav-link">Criadores</a></li>
+        <li><a href="#how-it-works" class="nav-link">Como Funciona</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">&#60;/&#62; Bem-vindo ao mundo da programação</div>
+      <h1 class="hero-title">
+        <span class="title-line">GT<span class="highlight">code</span></span>
+      </h1>
+      <p class="hero-subtitle">Guia Básico de Programação</p>
+      <p class="hero-description">
+        Descubra as principais linguagens, caminhos de carreira, recursos de estudo
+        e tudo que você precisa para começar sua jornada no desenvolvimento de software.
+      </p>
+      <div class="hero-buttons">
+        <a href="#languages" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> Explorar Linguagens
+        </a>
+        <a href="#career" class="btn btn-outline">
+          <i class="fas fa-briefcase"></i> Ver Carreiras
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="700">0</span>+
+          <span class="stat-label">Linguagens existentes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="28">0</span>M+
+          <span class="stat-label">Devs no mundo</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="95">0</span>%
+          <span class="stat-label">Sites usam JavaScript</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">main.py</span>
+        </div>
+        <pre class="code-body"><code id="typingCode"></code></pre>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Role para baixo</span>
+    </div>
+  </section>
+
+  <!-- LINGUAGENS -->
+  <section id="languages" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-code"></i> Linguagens</span>
+        <h2 class="section-title">Principais Linguagens de Programação</h2>
+        <p class="section-desc">Conheça as linguagens mais populares, quem as criou e para que servem.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="data">Data Science</button>
+        <button class="filter-btn" data-filter="systems">Sistemas</button>
+        <button class="filter-btn" data-filter="game">Games</button>
+      </div>
+
+      <div class="lang-grid" id="langGrid">
+
+        <div class="lang-card" data-category="web data" data-lang="python">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#3776AB">
+                <i class="fab fa-python"></i>
+              </div>
+              <h3>Python</h3>
+              <span class="lang-year">1991</span>
+              <p class="lang-creator">Guido van Rossum</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>Python</h4>
+              <p>Linguagem versátil usada em IA, data science, web, automação e mais. Sintaxe simples e legível, ideal para iniciantes.</p>
+              <div class="lang-tags">
+                <span>IA</span><span>Web</span><span>Data</span><span>Automação</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:25%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="web mobile" data-lang="javascript">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#F7DF1E">
+                <i class="fab fa-js-square"></i>
+              </div>
+              <h3>JavaScript</h3>
+              <span class="lang-year">1995</span>
+              <p class="lang-creator">Brendan Eich</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>JavaScript</h4>
+              <p>A linguagem da web! Roda no navegador e no servidor (Node.js). Essencial para front-end e cada vez mais usada no back-end.</p>
+              <div class="lang-tags">
+                <span>Front-end</span><span>Back-end</span><span>Full-Stack</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:35%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="mobile systems" data-lang="java">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#ED8B00">
+                <i class="fab fa-java"></i>
+              </div>
+              <h3>Java</h3>
+              <span class="lang-year">1995</span>
+              <p class="lang-creator">James Gosling</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>Java</h4>
+              <p>Linguagem robusta e multiplataforma. Muito usada em apps Android, sistemas bancários e grandes empresas.</p>
+              <div class="lang-tags">
+                <span>Android</span><span>Enterprise</span><span>Backend</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:55%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="systems" data-lang="c">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#A8B9CC">
+                <i class="fas fa-copyright"></i>
+              </div>
+              <h3>C</h3>
+              <span class="lang-year">1972</span>
+              <p class="lang-creator">Dennis Ritchie</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>C</h4>
+              <p>A "mãe" de muitas linguagens. Usada em sistemas operacionais, embarcados e software de alto desempenho.</p>
+              <div class="lang-tags">
+                <span>Sistemas</span><span>Embarcados</span><span>Performance</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:75%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="systems game" data-lang="cpp">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#00599C">
+                <i class="fas fa-plus"></i>
+              </div>
+              <h3>C++</h3>
+              <span class="lang-year">1985</span>
+              <p class="lang-creator">Bjarne Stroustrup</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>C++</h4>
+              <p>Extensão do C com orientação a objetos. Usada em engines de jogos (Unreal), navegadores e software de alta performance.</p>
+              <div class="lang-tags">
+                <span>Games</span><span>Engines</span><span>Performance</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:80%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="game web" data-lang="csharp">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#68217A">
+                <i class="fas fa-hashtag"></i>
+              </div>
+              <h3>C#</h3>
+              <span class="lang-year">2000</span>
+              <p class="lang-creator">Anders Hejlsberg (Microsoft)</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>C#</h4>
+              <p>Criada pela Microsoft para a plataforma .NET. Muito popular no desenvolvimento de jogos com Unity e apps Windows.</p>
+              <div class="lang-tags">
+                <span>Unity</span><span>.NET</span><span>Games</span><span>Desktop</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:50%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="web" data-lang="typescript">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#3178C6">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>TypeScript</h3>
+              <span class="lang-year">2012</span>
+              <p class="lang-creator">Anders Hejlsberg (Microsoft)</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>TypeScript</h4>
+              <p>Superset do JavaScript com tipagem estática. Ajuda a prevenir erros e é usado em projetos grandes como Angular.</p>
+              <div class="lang-tags">
+                <span>Web</span><span>Tipagem</span><span>Angular</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:40%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="mobile" data-lang="swift">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#FA7343">
+                <i class="fab fa-swift"></i>
+              </div>
+              <h3>Swift</h3>
+              <span class="lang-year">2014</span>
+              <p class="lang-creator">Chris Lattner (Apple)</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>Swift</h4>
+              <p>Linguagem da Apple para iOS, macOS e mais. Segura, rápida e moderna, substituiu o Objective-C.</p>
+              <div class="lang-tags">
+                <span>iOS</span><span>macOS</span><span>Apple</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:45%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="mobile" data-lang="kotlin">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#7F52FF">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Kotlin</h3>
+              <span class="lang-year">2011</span>
+              <p class="lang-creator">JetBrains</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>Kotlin</h4>
+              <p>Linguagem oficial para Android. Mais concisa que Java, interoperável e com recursos modernos.</p>
+              <div class="lang-tags">
+                <span>Android</span><span>JVM</span><span>Mobile</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:40%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="systems" data-lang="rust">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#CE422B">
+                <i class="fab fa-rust"></i>
+              </div>
+              <h3>Rust</h3>
+              <span class="lang-year">2010</span>
+              <p class="lang-creator">Graydon Hoare (Mozilla)</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>Rust</h4>
+              <p>Segurança de memória sem garbage collector. Rápida como C/C++ mas muito mais segura. Amada pelos devs!</p>
+              <div class="lang-tags">
+                <span>Sistemas</span><span>WebAssembly</span><span>Segurança</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:70%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="systems web" data-lang="go">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#00ADD8">
+                <i class="fab fa-golang"></i>
+              </div>
+              <h3>Go</h3>
+              <span class="lang-year">2009</span>
+              <p class="lang-creator">Robert Griesemer, Rob Pike, Ken Thompson (Google)</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>Go</h4>
+              <p>Simples, rápida e concorrente. Criada pelo Google para sistemas distribuídos, microserviços e cloud.</p>
+              <div class="lang-tags">
+                <span>Cloud</span><span>Microserviços</span><span>DevOps</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:35%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-card" data-category="data" data-lang="r">
+          <div class="lang-card-inner">
+            <div class="lang-card-front">
+              <div class="lang-icon" style="--accent:#276DC3">
+                <i class="fab fa-r-project"></i>
+              </div>
+              <h3>R</h3>
+              <span class="lang-year">1993</span>
+              <p class="lang-creator">Ross Ihaka &amp; Robert Gentleman</p>
+            </div>
+            <div class="lang-card-back">
+              <h4>R</h4>
+              <p>Especializada em estatística e visualização de dados. Muito usada em pesquisa acadêmica e análise de dados.</p>
+              <div class="lang-tags">
+                <span>Estatística</span><span>Pesquisa</span><span>Gráficos</span>
+              </div>
+              <div class="lang-difficulty">
+                <span>Dificuldade:</span>
+                <div class="difficulty-bar"><div class="difficulty-fill" style="width:45%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CARREIRA -->
+  <section id="career" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-briefcase"></i> Carreira</span>
+        <h2 class="section-title">Caminhos de Carreira em TI</h2>
+        <p class="section-desc">Explore as diversas áreas de atuação no mercado de tecnologia.</p>
+      </div>
+
+      <div class="career-grid">
+
+        <div class="career-card" data-aos="fade-up">
+          <div class="career-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Desenvolvedor Front-end</h3>
+          <p>Cria interfaces visuais e interativas usando HTML, CSS, JavaScript e frameworks como React, Vue ou Angular.</p>
+          <div class="career-salary">
+            <i class="fas fa-chart-line"></i>
+            <span>R$ 4.000 — R$ 18.000/mês</span>
+          </div>
+          <div class="career-techs">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+          </div>
+        </div>
+
+        <div class="career-card" data-aos="fade-up">
+          <div class="career-icon"><i class="fas fa-server"></i></div>
+          <h3>Desenvolvedor Back-end</h3>
+          <p>Constrói a lógica do servidor, APIs, bancos de dados e a arquitetura por trás das aplicações.</p>
+          <div class="career-salary">
+            <i class="fas fa-chart-line"></i>
+            <span>R$ 5.000 — R$ 22.000/mês</span>
+          </div>
+          <div class="career-techs">
+            <span>Node.js</span><span>Python</span><span>Java</span><span>SQL</span>
+          </div>
+        </div>
+
+        <div class="career-card" data-aos="fade-up">
+          <div class="career-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Desenvolvedor Mobile</h3>
+          <p>Cria aplicativos para smartphones e tablets, seja nativo (iOS/Android) ou multiplataforma.</p>
+          <div class="career-salary">
+            <i class="fas fa-chart-line"></i>
+            <span>R$ 5.000 — R$ 20.000/mês</span>
+          </div>
+          <div class="career-techs">
+            <span>Swift</span><span>Kotlin</span><span>Flutter</span><span>React Native</span>
+          </div>
+        </div>
+
+        <div class="career-card" data-aos="fade-up">
+          <div class="career-icon"><i class="fas fa-brain"></i></div>
+          <h3>Cientista de Dados</h3>
+          <p>Analisa grandes volumes de dados, cria modelos de machine learning e extrai insights valiosos.</p>
+          <div class="career-salary">
+            <i class="fas fa-chart-line"></i>
+            <span>R$ 7.000 — R$ 25.000/mês</span>
+          </div>
+          <div class="career-techs">
+            <span>Python</span><span>R</span><span>SQL</span><span>TensorFlow</span>
+          </div>
+        </div>
+
+        <div class="career-card" data-aos="fade-up">
+          <div class="career-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Segurança da Informação</h3>
+          <p>Protege sistemas contra ataques, realiza testes de vulnerabilidade e garante a segurança digital.</p>
+          <div class="career-salary">
+            <i class="fas fa-chart-line"></i>
+            <span>R$ 6.000 — R$ 25.000/mês</span>
+          </div>
+          <div class="career-techs">
+            <span>Linux</span><span>Redes</span><span>Python</span><span>Pentest</span>
+          </div>
+        </div>
+
+        <div class="career-card" data-aos="fade-up">
+          <div class="career-icon"><i class="fas fa-cloud"></i></div>
+          <h3>DevOps / Cloud</h3>
+          <p>Automatiza deployments, gerencia infraestrutura em nuvem e cria pipelines CI/CD.</p>
+          <div class="career-salary">
+            <i class="fas fa-chart-line"></i>
+            <span>R$ 7.000 — R$ 28.000/mês</span>
+          </div>
+          <div class="career-techs">
+            <span>Docker</span><span>AWS</span><span>Kubernetes</span><span>Terraform</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTUDO -->
+  <section id="study" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-book-open"></i> Estudo</span>
+        <h2 class="section-title">Como Estudar Programação</h2>
+        <p class="section-desc">Um roadmap prático para começar do zero e evoluir como desenvolvedor.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-step="1">
+          <div class="timeline-dot"><i class="fas fa-play"></i></div>
+          <div class="timeline-content">
+            <h3>Fundamentos</h3>
+            <p>Comece pela lógica de programação, algoritmos e estruturas de dados. Entenda variáveis, loops, condicionais e funções.</p>
+            <span class="timeline-time">1-2 meses</span>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="2">
+          <div class="timeline-dot"><i class="fas fa-code"></i></div>
+          <div class="timeline-content">
+            <h3>Primeira Linguagem</h3>
+            <p>Escolha Python ou JavaScript para começar. Pratique com projetos simples: calculadora, lista de tarefas, jogos de texto.</p>
+            <span class="timeline-time">2-3 meses</span>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="3">
+          <div class="timeline-dot"><i class="fas fa-project-diagram"></i></div>
+          <div class="timeline-content">
+            <h3>Projetos Práticos</h3>
+            <p>Construa projetos reais! Um site pessoal, uma API, um app. Publique no GitHub para criar seu portfólio.</p>
+            <span class="timeline-time">3-6 meses</span>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="4">
+          <div class="timeline-dot"><i class="fas fa-layer-group"></i></div>
+          <div class="timeline-content">
+            <h3>Frameworks & Ferramentas</h3>
+            <p>Aprenda frameworks (React, Django, Spring). Domine Git, terminal, banco de dados e boas práticas.</p>
+            <span class="timeline-time">4-8 meses</span>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="5">
+          <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
+          <div class="timeline-content">
+            <h3>Especialização</h3>
+            <p>Escolha uma área (front, back, mobile, data) e aprofunde-se. Contribua em open source e faça networking.</p>
+            <span class="timeline-time">6-12 meses</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="study-tips">
+        <h3><i class="fas fa-lightbulb"></i> Dicas de Ouro</h3>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon"><i class="fas fa-clock"></i></div>
+            <h4>Consistência</h4>
+            <p>Estude todos os dias, mesmo que 30 minutos. Consistência supera intensidade.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon"><i class="fas fa-hands-helping"></i></div>
+            <h4>Comunidade</h4>
+            <p>Participe de comunidades, Discord, fóruns. Aprender junto acelera o processo.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon"><i class="fas fa-hammer"></i></div>
+            <h4>Pratique</h4>
+            <p>Não fique só na teoria. Código se aprende codando. Construa, erre, refaça.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon"><i class="fas fa-search"></i></div>
+            <h4>Google é Amigo</h4>
+            <p>Saber pesquisar é 50% do trabalho. Stack Overflow, docs oficiais e tutoriais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section id="courses" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-graduation-cap"></i> Cursos</span>
+        <h2 class="section-title">Plataformas e Cursos Recomendados</h2>
+        <p class="section-desc">Recursos gratuitos e pagos para aprender programação.</p>
+      </div>
+
+      <div class="courses-grid">
+
+        <div class="course-card free">
+          <div class="course-badge">Gratuito</div>
+          <div class="course-icon"><i class="fab fa-free-code-camp"></i></div>
+          <h3>freeCodeCamp</h3>
+          <p>Currículo completo e gratuito com certificações em web development, Python, machine learning e mais.</p>
+          <a href="https://www.freecodecamp.org/" target="_blank" class="course-link">Acessar <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="course-card free">
+          <div class="course-badge">Gratuito</div>
+          <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Curso em Vídeo</h3>
+          <p>Gustavo Guanabara ensina programação em português de forma didática e acessível. Ideal para iniciantes.</p>
+          <a href="https://www.cursoemvideo.com/" target="_blank" class="course-link">Acessar <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="course-card free">
+          <div class="course-badge">Gratuito</div>
+          <div class="course-icon"><i class="fas fa-laptop"></i></div>
+          <h3>The Odin Project</h3>
+          <p>Currículo full-stack completo e open source. Ensina com projetos práticos do zero ao deploy.</p>
+          <a href="https://www.theodinproject.com/" target="_blank" class="course-link">Acessar <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="course-card paid">
+          <div class="course-badge">Pago</div>
+          <div class="course-icon"><i class="fab fa-udemy"></i></div>
+          <h3>Udemy</h3>
+          <p>Milhares de cursos de programação com preços acessíveis. De iniciante a avançado em diversas áreas.</p>
+          <a href="https://www.udemy.com/" target="_blank" class="course-link">Acessar <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="course-card paid">
+          <div class="course-badge">Pago</div>
+          <div class="course-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Rocketseat</h3>
+          <p>Plataforma brasileira focada em desenvolvimento web e mobile. Conteúdo moderno e comunidade ativa.</p>
+          <a href="https://www.rocketseat.com.br/" target="_blank" class="course-link">Acessar <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="course-card paid">
+          <div class="course-badge">Pago</div>
+          <div class="course-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Alura</h3>
+          <p>Plataforma completa em português com trilhas de carreira, projetos e certificações em tecnologia.</p>
+          <a href="https://www.alura.com.br/" target="_blank" class="course-link">Acessar <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CRIADORES -->
+  <section id="creators" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-users"></i> Criadores</span>
+        <h2 class="section-title">Quem Criou as Linguagens?</h2>
+        <p class="section-desc">Conheça as mentes brilhantes por trás das linguagens mais populares do mundo.</p>
+      </div>
+
+      <div class="creators-grid">
+
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <div class="creator-initials">GvR</div>
+          </div>
+          <h3>Guido van Rossum</h3>
+          <p class="creator-lang"><i class="fab fa-python"></i> Python (1991)</p>
+          <p>Holandês, criou Python buscando uma linguagem fácil de ler. Trabalhou no Google e Dropbox.</p>
+        </div>
+
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <div class="creator-initials">BE</div>
+          </div>
+          <h3>Brendan Eich</h3>
+          <p class="creator-lang"><i class="fab fa-js-square"></i> JavaScript (1995)</p>
+          <p>Criou JavaScript em apenas 10 dias na Netscape. Hoje é CEO do navegador Brave.</p>
+        </div>
+
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <div class="creator-initials">JG</div>
+          </div>
+          <h3>James Gosling</h3>
+          <p class="creator-lang"><i class="fab fa-java"></i> Java (1995)</p>
+          <p>Canadense, criou Java na Sun Microsystems com a filosofia "write once, run anywhere".</p>
+        </div>
+
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <div class="creator-initials">DR</div>
+          </div>
+          <h3>Dennis Ritchie</h3>
+          <p class="creator-lang"><i class="fas fa-copyright"></i> C (1972)</p>
+          <p>Americano, co-criou Unix e a linguagem C nos Bell Labs. Pai da computação moderna.</p>
+        </div>
+
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <div class="creator-initials">BS</div>
+          </div>
+          <h3>Bjarne Stroustrup</h3>
+          <p class="creator-lang"><i class="fas fa-plus"></i> C++ (1985)</p>
+          <p>Dinamarquês, criou C++ como extensão do C adicionando orientação a objetos e templates.</p>
+        </div>
+
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <div class="creator-initials">AH</div>
+          </div>
+          <h3>Anders Hejlsberg</h3>
+          <p class="creator-lang"><i class="fas fa-hashtag"></i> C# &amp; TypeScript</p>
+          <p>Dinamarquês na Microsoft, criou C# (2000) e TypeScript (2012). Também criou Turbo Pascal e Delphi.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="how-it-works" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-cogs"></i> Como Funciona</span>
+        <h2 class="section-title">Como a Programação Funciona?</h2>
+        <p class="section-desc">Entenda o processo desde o código até a execução.</p>
+      </div>
+
+      <div class="process-flow">
+
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <div class="process-icon"><i class="fas fa-keyboard"></i></div>
+          <h3>Escrever Código</h3>
+          <p>O programador escreve instruções em uma linguagem de programação usando um editor de código ou IDE.</p>
+        </div>
+
+        <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <div class="process-icon"><i class="fas fa-exchange-alt"></i></div>
+          <h3>Compilar / Interpretar</h3>
+          <p>O código é traduzido para linguagem de máquina por um compilador (C, Java) ou interpretador (Python, JS).</p>
+        </div>
+
+        <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <div class="process-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Executar</h3>
+          <p>O processador executa as instruções binárias, manipulando dados na memória e produzindo resultados.</p>
+        </div>
+
+        <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+
+        <div class="process-step">
+          <div class="process-number">04</div>
+          <div class="process-icon"><i class="fas fa-desktop"></i></div>
+          <h3>Resultado</h3>
+          <p>O software funciona! Pode ser um site, app, jogo, IA ou qualquer programa que resolva um problema.</p>
+        </div>
+
+      </div>
+
+      <div class="how-comparison">
+        <h3><i class="fas fa-balance-scale"></i> Compilado vs Interpretado</h3>
+        <div class="comparison-table">
+          <div class="comparison-col compiled">
+            <h4><i class="fas fa-file-code"></i> Compilado</h4>
+            <ul>
+              <li>Traduz todo o código antes de executar</li>
+              <li>Mais rápido na execução</li>
+              <li>Erros detectados na compilação</li>
+              <li>Exemplos: C, C++, Go, Rust</li>
+            </ul>
+          </div>
+          <div class="comparison-vs">VS</div>
+          <div class="comparison-col interpreted">
+            <h4><i class="fas fa-terminal"></i> Interpretado</h4>
+            <ul>
+              <li>Traduz linha por linha durante execução</li>
+              <li>Mais flexível e portátil</li>
+              <li>Erros aparecem em tempo de execução</li>
+              <li>Exemplos: Python, JavaScript, Ruby</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-question-circle"></i> Quiz</span>
+        <h2 class="section-title">Teste seus Conhecimentos!</h2>
+        <p class="section-desc">Responda 5 perguntas rápidas sobre programação.</p>
+      </div>
+
+      <div class="quiz-container" id="quizContainer">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar" id="quizProgress"></div>
+        </div>
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-result" id="quizResult" style="display:none">
+          <div class="quiz-score" id="quizScore"></div>
+          <button class="btn btn-primary" id="quizRestart"><i class="fas fa-redo"></i> Tentar Novamente</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <span class="logo-gt">GT</span><span class="logo-code">code</span>
+          </a>
+          <p>Guia Básico de Programação. Seu ponto de partida para o mundo do desenvolvimento de software.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#languages">Linguagens</a></li>
+            <li><a href="#career">Carreira</a></li>
+            <li><a href="#study">Estudo</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="#courses">Cursos</a></li>
+            <li><a href="#creators">Criadores</a></li>
+            <li><a href="#how-it-works">Como Funciona</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Compartilhe</h4>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 GTcode — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
